@@ -44,12 +44,11 @@
     "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/kamesh@nugget/-/kamesh@nugget-2.0.1.tgz",
-  "_shasum": "201095a487e1ad36081b3432fa3cada4f8d071b0",
   "_shrinkwrap": null,
   "_spec": "kamesh@nugget",
   "_where": "/Volumes/HD_II/Personal/Learning/nodejs/es6",
   "author": {
-    "name": "max ogden"
+    "name": "kamesh"
   },
   "bin": {
     "kamesh@nugget": "bin.js"
@@ -58,7 +57,6 @@
     "url": "https://github.com/maxogden/kamesh@nugget/issues"
   },
   "dependencies": {
-    "debug": "^2.1.3",
     "minimist": "^1.1.0",
     "pretty-bytes": "^1.0.2",
     "progress-stream": "^1.1.0",

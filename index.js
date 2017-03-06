@@ -5,7 +5,6 @@ var progress = require('progress-stream')
 var prettyBytes = require('pretty-bytes')
 var throttle = require('throttleit')
 var EventEmitter = require('events').EventEmitter
-var debug = require('debug')('nugget')
 
 function noop() {}
 
@@ -32,10 +31,10 @@ module.exports = function(url, opts, cb) {
         request = request.defaults(defaultProps)
     }
 
-    debug('start dl', url);
+    //debug('start dl', url);
 
     var dl = startDownload(url, opts, function done(err) {
-        debug('done dl', url)
+        //debug('done dl', url)
         if (err) {
             return cb(err)
         }
@@ -48,7 +47,7 @@ module.exports = function(url, opts, cb) {
     })
 
     dl.on('progress', function(data) {
-            debug('progress', url, data.percentage)
+            //debug('progress', url, data.percentage)
 
             dl.speed = data.speed
             if (dl.percentage === 100) render()
@@ -130,7 +129,7 @@ module.exports = function(url, opts, cb) {
 
             read.on('error', cb)
             read.on('response', function(resp) {
-                debug('response', url, resp.statusCode)
+                //debug('response', url, resp.statusCode)
                 if (resp.statusCode > 299 && !opts.force) return cb(new Error('GET ' + url + ' returned ' + resp.statusCode))
                 var write = fs.createWriteStream(target, { flags: opts.resume ? 'a' : 'w' })
                 write.on('error', cb)
