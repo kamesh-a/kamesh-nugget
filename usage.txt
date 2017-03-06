@@ -1,0 +1,9 @@
+Usage: 
+
+nugget(url,{
+	dir : output parent directory <string>
+	target : output filename <string>,
+	resume : resume aborted download <boolean>,
+	force : ignore response codes > 299 <boolean>,
+	quiet : disable logging <boolean>
+},callback)
